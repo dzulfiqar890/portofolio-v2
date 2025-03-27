@@ -62,7 +62,7 @@ const Hero = () => {
           <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light md:text-5xl">
             Dzulfiqar Ahnaf Nur Avicena
           </h1>
-          <h3 className="bg-gradient-to-r from-teal-400 to-indigo-600 bg-clip-text text-transparent text-2xl md:text-3xl h-[50px] flex items-center">
+          <h3 className="bg-gradient-to-r from-teal-400 to-indigo-600 bg-clip-text text-transparent text-2xl md:text-3xl h-[60px] flex items-center">
             A{currentText || "_"}
           </h3>
           <p className="md:text-base text-pretty text-sm text-gray-400">
