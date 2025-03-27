@@ -1,3 +1,5 @@
+import Cat from "./Cat";
+
 const Contact = () => {
   return (
     <div id="contact" className="flex min-h-[70vh] min-w-full
@@ -14,6 +16,7 @@ const Contact = () => {
           Ingin chat saya? Kirimkan sebuah email dan tekan tombol untuk mengirimkan respon
         </p>
 
+        <Cat/>
         <a href="mailto:avicenakom@gmail.com" className="text-nowrap rounded-lg
         border-indigo-600 bg-black px-5 py-3 text-lg font-bold
         text-white shadow-lg shadow-indigo-700 transition-all

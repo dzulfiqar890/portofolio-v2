@@ -1,7 +1,7 @@
 import { div } from "motion/react-client";
 import { useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
-import { BsTwitter, BsYoutube, BsLinkedin, BsGithub,  } from "react-icons/bs"
+import { BsTwitter, BsYoutube, BsLinkedin, BsGithub, BsUpload, BsPaperclip, BsPalette, BsInstagram, BsDownload,  } from "react-icons/bs"
 
 const Navbar = () => {
 
@@ -46,25 +46,25 @@ const Navbar = () => {
         <li className="cursor-pointer text-xl opacity-70
         transition-all duration-300 hover:text-red-500
         hover:opacity-100">
-            <BsYoutube />
-        </li>
-
-        <li className="cursor-pointer text-xl opacity-70
-        transition-all duration-300 hover:text-blue-500
-        hover:opacity-100">
-            <BsLinkedin />
+          <a href="https://drive.google.com/file/d/1G-n4k7fX6xF6oZ-oRSRYRlQJtrUVvI-1/view?usp=sharing" title="Curriculum Vitae"><BsDownload /></a>
         </li>
 
         <li className="cursor-pointer text-xl opacity-70
         transition-all duration-300 hover:text-sky-500
         hover:opacity-100">
-            <BsTwitter />
+            <a href="https://www.instagram.com/zulfiqarawrrd/" title="Instagram"><BsInstagram /></a>
         </li>
 
         <li className="cursor-pointer text-xl opacity-70
         transition-all duration-300 hover:text-orange-500
         hover:opacity-100">
-            <BsGithub />
+            <a href="https://github.com/dzulfiqar890" title="Github"><BsGithub /></a>
+        </li>
+
+        <li className="cursor-pointer text-xl opacity-70
+        transition-all duration-300 hover:text-blue-500
+        hover:opacity-100">
+            <a href="https://www.linkedin.com/in/dzulfiqar-ahnaf-nur-avicena/" title="Linkedin"><BsLinkedin /></a>
         </li>
       </ul>
 
@@ -104,25 +104,25 @@ const Navbar = () => {
         <li className="cursor-pointer text-xl opacity-70
         transition-all duration-300 hover:text-red-500
         hover:opacity-100">
-            <BsYoutube />
-        </li>
-
-        <li className="cursor-pointer text-xl opacity-70
-        transition-all duration-300 hover:text-blue-500
-        hover:opacity-100">
-            <BsLinkedin />
+          <a href="https://drive.google.com/file/d/1G-n4k7fX6xF6oZ-oRSRYRlQJtrUVvI-1/view?usp=sharing"><BsDownload /></a>
         </li>
 
         <li className="cursor-pointer text-xl opacity-70
         transition-all duration-300 hover:text-sky-500
         hover:opacity-100">
-            <BsTwitter />
+            <a href="https://www.instagram.com/zulfiqarawrrd/"><BsInstagram /></a>
         </li>
 
         <li className="cursor-pointer text-xl opacity-70
         transition-all duration-300 hover:text-orange-500
         hover:opacity-100">
-            <BsGithub />
+            <a href="https://github.com/dzulfiqar890"><BsGithub /></a>
+        </li>
+
+        <li className="cursor-pointer text-xl opacity-70
+        transition-all duration-300 hover:text-blue-500
+        hover:opacity-100">
+            <a href="https://www.linkedin.com/in/dzulfiqar-ahnaf-nur-avicena/"><BsLinkedin /></a>
         </li>
       </ul>
         </div>

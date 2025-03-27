@@ -5,37 +5,43 @@ import image3 from "/3.png";
 import image4 from "/4.png";
 import image5 from "/5.png";
 import { div, span } from "motion/react-client";
+import PortfolioSlider from "./PortfolioSlider";
 
 const projectsData = [
   {
     image: image1,
-    title: "My First Portofolio",
-    description: "Ini adalah portofolio pertama saya. Sudah memiliki kualitas yang baik dalam responsive, desain dan lain-lain ",
+    title: "Website Company Profile",
+    description: "Saya berkonstribusi dalam membuat website company profile dengan nama Arte Con Clase yang mencerminkan komitmen perusahaan dalam menciptakan karya seni dan desain yang tidak hanya indah, namun juga penuh komitmen dan menjunjung tinggi estetika.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://dzulfiqar890.github.io/company-accstudio/",
   },
   {
     image: image2,
-    title: "Wedding",
-    description: "Saya membuat website undangan pernikahan yang memiliki kualitas yang baik dalam responsive dan memiliki banyak fitur-fitur keren contohnya ada musik dan lain-lain",
+    title: "Website Wedding",
+    description: "Saya membuat website undangan pernikahan yang memiliki kualitas yang baik dalam responsive dan memiliki banyak fitur-fitur keren contohnya ada musik dan lain-lain.",
     technologies: ["HTML", "CSS-Boostrap", "JavaScript", "MySql", "Laravel"],
+    link: "https://dzulfiqar890.github.io/RezaAgnesWedding/",
   },
   {
     image: image3,
-    title: "Nexura Bank",
-    description: "Saya membuat website bank untuk mempromosikan bank kami yaitu Nexura Bank. Memiliki banyak fitur dan masih bisa responsive dengan baik ",
+    title: "Website Nexura Bank",
+    description: "Saya membuat website bank untuk mempromosikan bank kami yaitu Nexura Bank. Memiliki banyak fitur dan masih bisa responsive dengan baik.",
     technologies: ["HTML", "CSS"],
+    link: "https://dzulfiqar890.github.io/NexuraBank/",
   },
   {
     image: image4,
-    title: "Simple Quiz",
-    description: "Saya membuat website quiz karena tugas ekstrakurikuler webtech. Memiliki fitur penilaian skor yang baik dan memiliki soal yang rumit ",
+    title: "Website Simple Quiz",
+    description: "Saya membuat website quiz karena tugas ekstrakurikuler webtech. Memiliki fitur penilaian skor yang baik dan memiliki soal yang rumit.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://dzulfiqar890.github.io/Hosting-Pertama/",
   },
   {
     image: image5,
-    title: "The Me Lug'o",
-    description: "Saya membuat website cuaca tapi masih dalam tahapan pengembangan dan masih banyak bug tapi memiliki desain yang unik dan bagus secara visualisasi",
+    title: "Website The Me Lug'o",
+    description: "Saya membuat website cuaca tapi masih dalam tahapan pengembangan dan masih banyak bug tapi memiliki desain yang unik dan bagus secara visualisasi.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://dzulfiqar890.github.io/Latihan-Hosting/",
   },
 ]
 
@@ -52,37 +58,33 @@ const ScrollReveal = ({children}) => {
   )
 }
 
-const ProjectCard = ({project}) => {
+const ProjectCard = ({ project }) => {
   return (
     <ScrollReveal>
-    <div className="flex flex-col items-center gap-8 md:flex-row
-    md:gap-24">
-      <img src={project.image} alt="" className="w-full
-      cursor-pointer rounded-2xl transition-all duration-300 
-      hover:scale-105 md:w-[300px]"/>
-      <div className="flex flex-col gap-5">
-
-        <div className="flex flex-col gap-3">
-          <div className="text-xl font-semibold">{project.title}</div>
-          <p className="text-gray-400">{project.description}</p>
+      <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-24 w-full">
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full md:w-[400px]">
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-[200px] object-cover cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105" 
+          />
+        </a>
+        <div className="flex flex-col gap-5 max-w-[500px]">
+          <div className="flex flex-col gap-3">
+            <div className="text-xl font-semibold">{project.title}</div>
+            <p className="text-gray-400">{project.description}</p>
+          </div>
+          <div className="flex flex-wrap gap-5">
+            {project.technologies.map((tech, index) => (
+              <span key={index} className="rounded-lg bg-black p-3">{tech}</span>
+            ))}
+          </div>
         </div>
-
-        <div className="flex flex-wrap gap-5">
-          {
-            project.technologies.map((tech, index) => (
-              <span key={index} className="rounded-lg bg-black p-3">
-                {tech}
-              </span>
-            ))
-          }
-        </div>
-        
       </div>
-    </div>
     </ScrollReveal>
-  )
+  );
+};
 
-}
 
 
 const Projects = () => {
@@ -92,9 +94,11 @@ const Projects = () => {
 
       <ScrollReveal>
         <h1 className="text-4xl font-light text-white md:text-6xl">
-          My Projects
+          Projects
         </h1>
       </ScrollReveal>
+
+      <PortfolioSlider />
       
       <div className="flex w-full max-w-[1000px] flex-col gap-16
       text-white">
