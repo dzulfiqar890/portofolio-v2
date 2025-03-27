@@ -62,9 +62,11 @@ const Hero = () => {
           <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light md:text-5xl">
             Dzulfiqar Ahnaf Nur Avicena
           </h1>
-          <h3 className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-2xl md:text-3xl">A
-            {currentText}
+          <h3 className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-2xl md:text-3xl h-[60px] flex items-center">
+            A{currentText || "_"}
           </h3>
+
+
           <p className="md:text-base text-pretty text-sm text-gray-400">
             Saya adalah seorang web developer. Seorang siswa yang berdedikasi di SMK Telkom Purwokerto dengan jurusan Pengembangan Perangkat Lunak dan Game (PPLG). Sangat menyukai pemrograman, dengan minat yang besar untuk membangun situs web yang inovatif dan memiliki dasar yang kuat dalam pengembangan website. Saat ini, saya aktif belajar dan mengasah kemampuan saya dalam pemrograman, analisis, dan pemecahan masalah untuk mempersiapkan diri menghadapi tantangan masa depan.
           </p>
