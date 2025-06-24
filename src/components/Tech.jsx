@@ -1,12 +1,8 @@
 import { 
   BiLogoBootstrap, 
-  BiLogoDiscord, 
-  BiLogoDjango, 
-  BiLogoFigma, 
   BiLogoJavascript, 
   BiLogoPhp, 
   BiLogoPython, 
-  BiLogoReact, 
   BiLogoTailwindCss
 } from "react-icons/bi";
 import { motion } from "framer-motion"; 
@@ -18,14 +14,11 @@ const Tech = () => {
   };
 
   const technologies = [
-    { icon: BiLogoDjango, color: "text-green-500" },
     { icon: BiLogoPython, color: "text-blue-400" }, 
     { icon: BiLogoPhp, color: "text-indigo-600" }, 
     { icon: BiLogoJavascript, color: "text-yellow-400" }, 
     { icon: BiLogoBootstrap, color: "text-purple-600" }, 
-    { icon: BiLogoReact, color: "text-blue-500" }, 
     { icon: BiLogoTailwindCss, color: "text-blue-400" }, 
-    { icon: BiLogoDiscord, color: "text-blue-500" }, 
   ];
 
   return (
