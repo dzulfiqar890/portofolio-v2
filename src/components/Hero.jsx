@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import image from "/image.jpg";
 
 const Hero = () => {
-  const texts = [" Junior Web Developer", " Front End Developer", " Back End Developer", " Student"];
+  const texts = [" Junior Web Developer", " Front End Developer", " Back End Developer", " Student", " AI Enggineer"];
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -45,7 +45,7 @@ const Hero = () => {
         >
           <img
             src={image}
-            alt="profile"
+            alt="Dzulfiqar Ahnaf Nur Avicena profile"
             title="Dzulfiqar Ahnaf Nur Avicena"
             className="w-[200px] cursor-pointer rounded-full shadow-xl shadow-indigo-900 
             transition-all duration-300 grayscale hover:grayscale-0 
