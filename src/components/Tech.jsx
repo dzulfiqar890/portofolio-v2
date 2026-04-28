@@ -1,55 +1,66 @@
-import { 
-  BiLogoBootstrap, 
-  BiLogoJavascript, 
-  BiLogoPhp, 
-  BiLogoPython, 
-  BiLogoTailwindCss
+import { motion } from "framer-motion";
+import {
+  BiLogoBootstrap,
+  BiLogoJavascript,
+  BiLogoPhp,
+  BiLogoPython,
+  BiLogoTailwindCss,
 } from "react-icons/bi";
-import { motion } from "framer-motion"; 
+
+const technologies = [
+  { icon: BiLogoPython,     name: "Python",     color: "text-blue-400",   shadow: "hover:shadow-blue-500/20"  },
+  { icon: BiLogoPhp,        name: "PHP",         color: "text-indigo-400", shadow: "hover:shadow-indigo-500/20"},
+  { icon: BiLogoJavascript, name: "JavaScript",  color: "text-yellow-400", shadow: "hover:shadow-yellow-500/20"},
+  { icon: BiLogoBootstrap,  name: "Bootstrap",   color: "text-purple-400", shadow: "hover:shadow-purple-500/20"},
+  { icon: BiLogoTailwindCss,name: "Tailwind",    color: "text-cyan-400",   shadow: "hover:shadow-cyan-500/20"  },
+];
+
+const TechCard = ({ tech, index }) => {
+  const Icon = tech.icon;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className={`group flex flex-col items-center justify-center gap-3 rounded-2xl glass glass-hover p-6 md:p-8 transition-all duration-500 hover:-translate-y-2 cursor-default hover:shadow-xl ${tech.shadow}`}
+    >
+      <Icon className={`text-[50px] md:text-[64px] ${tech.color} transition-transform duration-300 group-hover:scale-110`} />
+      <span className="text-sm font-body font-medium text-txt-secondary group-hover:text-txt-primary transition-colors">
+        {tech.name}
+      </span>
+    </motion.div>
+  );
+};
 
 const Tech = () => {
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const technologies = [
-    { icon: BiLogoPython, color: "text-blue-400" }, 
-    { icon: BiLogoPhp, color: "text-indigo-600" }, 
-    { icon: BiLogoJavascript, color: "text-yellow-400" }, 
-    { icon: BiLogoBootstrap, color: "text-purple-600" }, 
-    { icon: BiLogoTailwindCss, color: "text-blue-400" }, 
-  ];
-
   return (
-    <div id="tech" className="flex min-h-[70vh] w-full flex-col items-center justify-center gap-16 md:gap-32">
-      <motion.h1 
-        variants={variants} 
-        initial="hidden" 
-        whileInView="visible" 
+    <section
+      id="tech"
+      className="flex w-full max-w-4xl flex-col items-center gap-12 px-4 py-20 md:px-8 md:py-28"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-light text-white md:text-6xl"
+        className="text-center"
       >
-        Technologies
-      </motion.h1>
+        <span className="text-sm font-body font-medium text-accent-primary uppercase tracking-widest">
+          Skills
+        </span>
+        <h2 className="mt-2 text-3xl font-heading font-bold text-txt-primary md:text-5xl">
+          Tech{" "}
+          <span className="gradient-text-hero">Stack</span>
+        </h2>
+      </motion.div>
 
-      <div className="flex flex-wrap items-center justify-center gap-20 p-4">
-        {technologies.map((tech, index) => {
-          const Icon = tech.icon;
-          return (
-            <motion.div 
-              key={index} 
-              variants={variants} 
-              initial="hidden" 
-              whileInView="visible" 
-              transition={{ duration: 0.5 }}
-            >
-              <Icon className={`cursor-pointer text-[80px] ${tech.color} transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]`} />
-            </motion.div>
-          );
-        })}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 w-full">
+        {technologies.map((tech, index) => (
+          <TechCard key={index} tech={tech} index={index} />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
